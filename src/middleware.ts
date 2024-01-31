@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { SECRET_KEY } from './config';
 
+// should be in db with sha256 hashes of passwords
 let users = [
   { id: 1, username: 'admin', password: 'admin' },
   { id: 1, username: 'user', password: '123' },
