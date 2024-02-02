@@ -4,7 +4,7 @@ import { Car } from './interfaces';
 
 export async function getAllCars(req: Request, res: Response) {
   try {
-    const cars = await carServices.getAllCars();
+    const cars: Car[] = await carServices.getAllCars();
     res.json(cars);
   } catch (err) {
     console.error(err);
@@ -15,7 +15,7 @@ export async function getAllCars(req: Request, res: Response) {
 export async function getCarById(req: Request, res: Response) {
   const carId = req.params.id;
   try {
-    const car = await carServices.getCarById(carId);
+    const car: Car | null = await carServices.getCarById(carId);
     if (car) {
       res.json(car);
     } else {
@@ -42,7 +42,7 @@ export async function updateCar(req: Request, res: Response) {
   const carId = req.params.id;
   const newData = req.body;
   try {
-    const updatedCar = await carServices.updateCar(carId, newData);
+    const updatedCar: Car | null= await carServices.updateCar(carId, newData);
     res.json(updatedCar);
   } catch (err) {
     console.error(err);
