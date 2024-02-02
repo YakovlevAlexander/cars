@@ -29,7 +29,7 @@ export function generateToken(req: Request, res: Response) {
   const user = users.find((user) => user.username === username && user.password === password);
 
   if (user) {
-    const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '1h' });
+    const token = jwt.sign({ userId: user.id }, SECRET_KEY);
     res.json({ token });
   }
 }

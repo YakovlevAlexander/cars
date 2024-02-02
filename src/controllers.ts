@@ -31,7 +31,7 @@ export async function createCar(req: Request, res: Response) {
   const newCar: Car = req.body;
   try {
     const car = await carServices.createCar(newCar);
-    res.json(newCar);
+    res.json(car);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: 'Server error'});
