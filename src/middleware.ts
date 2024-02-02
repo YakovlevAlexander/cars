@@ -5,7 +5,7 @@ import { SECRET_KEY } from './config';
 // should be in db with sha256 hashes of passwords
 let users = [
   { id: 1, username: 'admin', password: 'admin' },
-  { id: 1, username: 'user', password: '123' },
+  { id: 2, username: 'user', password: '123' },
 ];
 
 export function auth(req: Request, res: Response, next: NextFunction) {
